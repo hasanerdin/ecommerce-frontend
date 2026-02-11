@@ -1,11 +1,16 @@
 import requests
 from typing import List, Dict, Optional
 from datetime import date
+import streamlit as st
 import os
 
 # BASE_API_URL = "http://localhost:8000"
-BASE_API_URL = os.getenv("API_BASE_URL")
-
+BASE_API_URL = st.secrets.get("BASE_API_URL", 
+                              os.getenv("BASE_API_URL")
+                            )
+print("**************")
+print(BASE_API_URL)
+print("**************")
 
 def check_api_health() -> bool:
     try:
