@@ -8,9 +8,6 @@ import os
 BASE_API_URL = st.secrets.get("BASE_API_URL", 
                               os.getenv("BASE_API_URL")
                             )
-print("**************")
-print(BASE_API_URL)
-print("**************")
 
 def check_api_health() -> bool:
     try:
